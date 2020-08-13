@@ -6,6 +6,8 @@ let app = express();
 
 let PORT = process.env.PORT || 8080;
 
+let routes = require('./controllers/burgers_controllers.js')
+
 // Connecting Public folder for Access to Styling and Imgs.
 app.use(express.static('public'));
 
@@ -15,14 +17,7 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get('/',(req, res) =>{
-
-    console.log('Testing out if the page is live');
-
-    res.render('index')
-})
-
-
+app.use(routes)
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
