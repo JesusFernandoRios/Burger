@@ -14,9 +14,9 @@ let burger = {
         });
       },
     
-      updateOne: function(burger_id, callback){
+      updateOne: function(burger_id, cb){
         orm.updateOne(burger_id, function(res){
-          callback(res);
+          cb(res);
         });
       }
 

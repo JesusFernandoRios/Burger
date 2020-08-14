@@ -8,9 +8,18 @@
          <div class="row">
              <div class="col">
                 <h2 class="white"> This area will show the submitted Hamburger</h2>
+                <ul>
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
             </div>
             <div class="col">
                 <h2 class="white"> This area will show the eaten Hamburgers</h2>
+                <ul>
+                    
+                </ul>
             </div>
         </div>
     </div>
