@@ -8,18 +8,32 @@
          <div class="row">
              <div class="col">
                 <h2 class="white"> This area will show the submitted Hamburger</h2>
-                <ul>
-                    {{#each burgers}}
-                        {{#unless devoured}}
-                        {{/unless}}
-                    {{/each}}
-                </ul>
+            
+                {{#each burgers}}
+                    {{#unless devoured}}
+                    <form action="burger/eat/{{id}}" method="POST">
+                        <div class="input-group">
+                            <hr>
+                            <li class="form-control">{{id}}. {{burger_name}}</li>
+                            <hr>
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger devour-button" type="submit">Devour It!</button>
+                            </span>
+                        </div>
+                    </form>
+                    {{/unless}}
+                {{/each}}
+
             </div>
             <div class="col">
                 <h2 class="white"> This area will show the eaten Hamburgers</h2>
-                <ul>
-                    
-                </ul>
+                {{#each burgers}}
+                    {{#if this.devoured}}
+                        <div class="input-group">
+                            <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+                        </div>
+                     {{/if}}
+                {{/each}}
             </div>
         </div>
     </div>
@@ -30,12 +44,19 @@
     <div class="col">
     </div>
     <div class="col">
-        <p class="white">Enter the name a Hamburger you would like to eat!</p>
-        <textarea id="text" rows="6" cols="35"></textarea>
-        <button type="submit" class="btn btn-light">EAT DA BURGER</button>
+
+        <form action="burger/create" method="POST"> 
+        
+                
+            <center><label for="new_burger" class="white">Add a new Burger!</label></center>
+            <textarea class="form-control" type="text" columns='80' rows="6" id="new_burger" required value="" name="burger_name"></textarea>
+    
+            <center>
+                <button id="submit-button" type="submit" class="btn btn-danger">Make my Burger!</button>
+            </center>
+      </form>
     </div>
-    <div class="col">
-    </div>
+    <div class="col"></div>
   </div>
 </div>
 
