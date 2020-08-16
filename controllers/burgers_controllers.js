@@ -6,8 +6,13 @@ let router = express.Router();
 
 //////
 
+router.get('/', function (req, res) 
+{
+  res.redirect('/index');
+});
 
-router.get('/', (req, res) => {
+
+router.get('/index', (req, res) => {
     burger.selectAll(function(data){
         let obj = {burgers: data};
 
@@ -32,10 +37,6 @@ router.post('/burger/eat/:id', (req, res) => {
   });
 });
 
-router.get('/', function (req, res) 
-{
-  res.redirect('/index');
-});
 
 //////
 
