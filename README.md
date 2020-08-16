@@ -1,6 +1,7 @@
 # Eat The Burger            
 ## License 
                                  
+![burger](public/assets/img/Untitled.png)
 
 ## Description
 This application was created as a fun project to test my skills and learn more about express, handlebars and mysql.
