@@ -1,5 +1,6 @@
-# Eat The Burger            
-##[Live App] (https://stark-hollows-63908.herokuapp.com/index)
+# Eat The Burger 
+
+##[Live App](https://stark-hollows-63908.herokuapp.com/index)
                                  
 ![burger](public/assets/img/Untitled.png)
 
